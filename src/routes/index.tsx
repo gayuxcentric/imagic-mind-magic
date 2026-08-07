@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Linkedin } from "lucide-react";
 import heroLumi from "@/assets/hero-lumi.png";
+import kathrinaPhoto from "@/assets/kathrina.jpeg.asset.json";
+import gayathriPhoto from "@/assets/gayathri.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
