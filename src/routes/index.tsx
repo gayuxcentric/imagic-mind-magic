@@ -233,49 +233,29 @@ function Storytelling() {
         aria-hidden
         className="pointer-events-none absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-lavender/40 blur-3xl"
       />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
-        <div>
-          <h2 className="font-display text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl">
-            Created by Two Mothers.
-            <br />
-            <span className="text-primary">Built for Every Child.</span>
-          </h2>
-          <div className="mt-7 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            <p>
-              As mothers and technology leaders, we created ImagicMind because
-              we wanted our own children to experience AI in a safe, creative
-              and inspiring way.
-            </p>
-            <p>
-              We believe AI should encourage imagination, build confidence and
-              help children learn through play—not replace their creativity.
-            </p>
-          </div>
-          <a
-            href="#founders"
-            className="mt-9 inline-flex items-center rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background transition-transform hover:scale-[1.02]"
-          >
-            Meet the Founders
-          </a>
+      <div className="relative mx-auto max-w-3xl text-center">
+        <h2 className="font-display text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl">
+          Created by Two Mothers.
+          <br />
+          <span className="text-primary">Built for Every Child.</span>
+        </h2>
+        <div className="mt-7 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p>
+            As mothers and technology leaders, we created ImagicMind because we
+            wanted our own children to experience AI in a safe, creative and
+            inspiring way.
+          </p>
+          <p>
+            We believe AI should encourage imagination, build confidence and
+            help children learn through play—not replace their creativity.
+          </p>
         </div>
-        <div className="relative">
-          <div className="relative overflow-hidden rounded-[2.5rem] soft-shadow-lg">
-            <img
-              src={foundersTogether}
-              alt="ImagicMind founders Kathrina Jall and Gayathri Sekar together"
-              loading="lazy"
-              className="aspect-[6/5] w-full object-cover"
-            />
-          </div>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-6 -top-6 h-28 w-28 rounded-full bg-cream/80 blur-2xl"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -left-6 -bottom-6 h-28 w-28 rounded-full bg-peach/60 blur-2xl"
-          />
-        </div>
+        <a
+          href="#founders"
+          className="mt-9 inline-flex items-center rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background transition-transform hover:scale-[1.02]"
+        >
+          Meet the Founders
+        </a>
       </div>
     </section>
   );
