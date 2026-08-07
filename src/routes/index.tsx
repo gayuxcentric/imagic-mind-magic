@@ -221,16 +221,14 @@ const founders = [
     role: "Co-Founder & CEO",
     bio: "Systems Engineer, Philips Healthcare. Mother of two with firsthand insight into children's digital experiences. Leads customer discovery, partnerships, and German go-to-market strategy.",
     linkedin: "https://www.linkedin.com/",
-    initials: "KJ",
-    tone: "from-blush to-peach",
+    photo: kathrinaPhoto.url,
   },
   {
     name: "Gayathri Sekar",
-    role: "Co-Founder & CTO/CPO",
+    role: "Co-Founder & CTO",
     bio: "MBA in International Management, Hochschule Pforzheim (Class of 2027). 10+ years of experience in software engineering and product development. Leads AI strategy, technology, and product innovation.",
     linkedin: "https://www.linkedin.com/",
-    initials: "GS",
-    tone: "from-lavender to-lumi",
+    photo: gayathriPhoto.url,
   },
 ];
 
