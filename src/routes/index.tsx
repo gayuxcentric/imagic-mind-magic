@@ -1,24 +1,380 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Linkedin } from "lucide-react";
+import heroLumi from "@/assets/hero-lumi.png";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "ImagicMind — Where Young Minds Imagine Without Limits" },
+      {
+        name: "description",
+        content:
+          "ImagicMind is a safe AI-powered creative companion where children aged 5–12 imagine, create, and learn through magical experiences.",
+      },
+      { property: "og:title", content: "ImagicMind — Where Young Minds Imagine Without Limits" },
+      {
+        property: "og:description",
+        content:
+          "A safe AI-powered creative companion where children imagine, create, and learn through magical experiences.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+    <div className="min-h-screen bg-background font-sans text-foreground antialiased">
+      <Nav />
+      <Hero />
+      <HowItWorks />
+      <WhyTrust />
+      <Founders />
+      <Waitlist />
+      <Footer />
+    </div>
+  );
+}
+
+function Nav() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#top" className="flex items-center gap-2">
+          <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-lumi text-lg font-bold text-primary-foreground font-display">
+            i
+          </span>
+          <span className="text-lg font-semibold tracking-tight font-display">
+            ImagicMind
+          </span>
+        </a>
+        <div className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
+          <a href="#how" className="transition-colors hover:text-foreground">
+            How it works
+          </a>
+          <a href="#trust" className="transition-colors hover:text-foreground">
+            For parents
+          </a>
+          <a href="#founders" className="transition-colors hover:text-foreground">
+            Founders
+          </a>
+        </div>
+        <a
+          href="#waitlist"
+          className="rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
+        >
+          Join waitlist
+        </a>
+      </nav>
+    </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section id="top" className="relative overflow-hidden">
+      {/* soft pastel ambient blobs */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full bg-blush/50 blur-3xl"
       />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-40 h-96 w-96 rounded-full bg-lavender/40 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-peach/40 blur-3xl"
+      />
+
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
+        <div className="text-center md:text-left">
+          <span className="inline-flex items-center rounded-full bg-secondary/60 px-4 py-1.5 text-xs font-medium text-secondary-foreground">
+            ✨ For curious minds aged 5–12
+          </span>
+          <h1 className="mt-6 font-display text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+            Where Young Minds Imagine Without Limits
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:mx-0">
+            ImagicMind is a safe AI-powered creative companion where children
+            imagine, create, and learn through magical experiences.
+          </p>
+          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row md:justify-start">
+            <a
+              href="#waitlist"
+              className="w-full rounded-full bg-primary px-7 py-3.5 text-center text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02] sm:w-auto"
+            >
+              Start Creating
+            </a>
+            <a
+              href="#waitlist"
+              className="w-full rounded-full border border-border bg-card px-7 py-3.5 text-center text-sm font-semibold text-foreground transition-colors hover:bg-accent/40 sm:w-auto"
+            >
+              Join Waitlist
+            </a>
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="relative mx-auto max-w-md rounded-[2.5rem] bg-gradient-to-br from-cream via-card to-lavender/30 p-4 soft-shadow-lg md:max-w-lg">
+            <img
+              src={heroLumi}
+              alt="A child imagining alongside Lumi, the friendly AI companion"
+              width={1024}
+              height={1024}
+              className="h-auto w-full rounded-[2rem]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const steps = [
+  { emoji: "💡", title: "Imagine", desc: "Share your idea." },
+  { emoji: "🤖", title: "Create", desc: "AI brings it to life." },
+  { emoji: "🎨", title: "Play", desc: "Explore and customize." },
+  { emoji: "🌱", title: "Grow", desc: "Build creativity and confidence." },
+];
+
+function HowItWorks() {
+  return (
+    <section id="how" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+      <SectionHeading
+        eyebrow="How it works"
+        title="Magic in four simple steps"
+      />
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {steps.map((s, i) => (
+          <div
+            key={s.title}
+            className="rounded-3xl border border-border/70 bg-card p-7 soft-shadow transition-transform hover:-translate-y-1"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/30 text-3xl">
+              {s.emoji}
+            </div>
+            <div className="mt-5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              0{i + 1}
+            </div>
+            <h3 className="mt-1 font-display text-xl font-semibold text-foreground">
+              {s.title}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {s.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+const trusts = [
+  {
+    title: "Safe AI",
+    desc: "Every interaction is designed for children — guarded, age-appropriate, and built with wellbeing at the center.",
+  },
+  {
+    title: "Privacy First",
+    desc: "Your family's data stays yours. We follow the strictest standards, including GDPR, with no ads and no tracking.",
+  },
+  {
+    title: "Learning Through Play",
+    desc: "Creativity meets curiosity. Children build confidence and problem-solving skills while having fun.",
+  },
+];
+
+function WhyTrust() {
+  return (
+    <section id="trust" className="bg-gradient-to-b from-transparent via-cream/50 to-transparent py-20 md:py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <SectionHeading
+          eyebrow="For parents"
+          title="Why parents trust ImagicMind"
+        />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {trusts.map((t) => (
+            <div
+              key={t.title}
+              className="rounded-3xl border border-border/70 bg-card p-8 soft-shadow"
+            >
+              <h3 className="font-display text-xl font-semibold text-foreground">
+                {t.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {t.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const founders = [
+  {
+    name: "Kathrina Jall",
+    role: "Co-Founder & CEO",
+    bio: "Systems Engineer, Philips Healthcare. Mother of two with firsthand insight into children's digital experiences. Leads customer discovery, partnerships, and German go-to-market strategy.",
+    linkedin: "https://www.linkedin.com/",
+    initials: "KJ",
+    tone: "from-blush to-peach",
+  },
+  {
+    name: "Gayathri Sekar",
+    role: "Co-Founder & CTO/CPO",
+    bio: "MBA in International Management, Hochschule Pforzheim (Class of 2027). 10+ years of experience in software engineering and product development. Leads AI strategy, technology, and product innovation.",
+    linkedin: "https://www.linkedin.com/",
+    initials: "GS",
+    tone: "from-lavender to-lumi",
+  },
+];
+
+function Founders() {
+  return (
+    <section id="founders" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+      <SectionHeading eyebrow="Our story" title="Meet the founders" />
+      <div className="mt-12 grid gap-6 md:grid-cols-2">
+        {founders.map((f) => (
+          <div
+            key={f.name}
+            className="rounded-3xl border border-border/70 bg-card p-8 soft-shadow"
+          >
+            <div className="flex items-center gap-5">
+              <div
+                className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${f.tone} font-display text-xl font-semibold text-foreground`}
+              >
+                {f.initials}
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-foreground">
+                  {f.name}
+                </h3>
+                <p className="text-sm font-medium text-primary">{f.role}</p>
+              </div>
+            </div>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              {f.bio}
+            </p>
+            <a
+              href={f.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${f.name} on LinkedIn`}
+              className="mt-5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <Linkedin size={18} />
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Waitlist() {
+  return (
+    <section id="waitlist" className="px-6 py-20 md:py-28">
+      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-blush via-cream to-lavender/50 p-10 text-center soft-shadow-lg md:p-16">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-peach/40 blur-2xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-lavender/40 blur-2xl"
+        />
+        <div className="relative">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            Join the First Families
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
+            Be among the first to bring ImagicMind home. We'll let you know as
+            soon as early access opens.
+          </p>
+          <form
+            className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <input
+              type="email"
+              required
+              placeholder="you@example.com"
+              aria-label="Email address"
+              className="w-full rounded-full border border-border bg-card/80 px-5 py-3.5 text-sm text-foreground outline-none transition-shadow placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/40"
+            />
+            <button
+              type="submit"
+              className="shrink-0 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
+            >
+              Join Waitlist
+            </button>
+          </form>
+          <p className="mt-4 text-xs text-muted-foreground">
+            No spam. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-border/70 px-6 py-10">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
+        <div className="flex items-center gap-2">
+          <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-lumi text-sm font-bold text-primary-foreground font-display">
+            i
+          </span>
+          <span className="font-display text-base font-semibold">
+            ImagicMind
+          </span>
+        </div>
+        <div className="flex items-center gap-6 text-sm text-muted-foreground">
+          <a href="#top" className="transition-colors hover:text-foreground">
+            Contact
+          </a>
+          <a href="#top" className="transition-colors hover:text-foreground">
+            Privacy
+          </a>
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="ImagicMind on LinkedIn"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border transition-colors hover:border-primary hover:text-primary"
+          >
+            <Linkedin size={16} />
+          </a>
+        </div>
+      </div>
+      <p className="mt-8 text-center text-xs text-muted-foreground">
+        © {new Date().getFullYear()} ImagicMind. Made with care for young imaginations.
+      </p>
+    </footer>
+  );
+}
+
+function SectionHeading({
+  eyebrow,
+  title,
+}: {
+  eyebrow: string;
+  title: string;
+}) {
+  return (
+    <div className="text-center">
+      <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+        {eyebrow}
+      </span>
+      <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        {title}
+      </h2>
     </div>
   );
 }
