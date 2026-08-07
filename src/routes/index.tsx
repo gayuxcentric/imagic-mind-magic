@@ -222,14 +222,14 @@ const founders = [
     name: "Kathrina Jall",
     role: "Co-Founder & CEO",
     bio: "Systems Engineer, Philips Healthcare. Mother of two with firsthand insight into children's digital experiences. Leads customer discovery, partnerships, and German go-to-market strategy.",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/kathrinajall/",
     photo: kathrinaPhoto.url,
   },
   {
     name: "Gayathri Sekar",
     role: "Co-Founder & CTO",
     bio: "MBA in International Management, Hochschule Pforzheim (Class of 2027). 10+ years of experience in software engineering and product development. Leads AI strategy, technology, and product innovation.",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/gayathri-sekar-18858924/",
     photo: gayathriPhoto.url,
   },
 ];
