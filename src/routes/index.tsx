@@ -245,11 +245,14 @@ function Founders() {
             className="rounded-3xl border border-border/70 bg-card p-8 soft-shadow"
           >
             <div className="flex items-center gap-5">
-              <div
-                className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${f.tone} font-display text-xl font-semibold text-foreground`}
-              >
-                {f.initials}
-              </div>
+              <img
+                src={f.photo}
+                alt={`Portrait of ${f.name}`}
+                width={128}
+                height={128}
+                loading="lazy"
+                className="h-16 w-16 shrink-0 rounded-2xl object-cover soft-shadow"
+              />
               <div>
                 <h3 className="font-display text-xl font-semibold text-foreground">
                   {f.name}
