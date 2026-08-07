@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Linkedin } from "lucide-react";
 import heroLumi from "@/assets/hero-lumi.png";
+import kathrinaPhoto from "@/assets/kathrina.jpeg.asset.json";
+import gayathriPhoto from "@/assets/gayathri.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -221,16 +223,14 @@ const founders = [
     role: "Co-Founder & CEO",
     bio: "Systems Engineer, Philips Healthcare. Mother of two with firsthand insight into children's digital experiences. Leads customer discovery, partnerships, and German go-to-market strategy.",
     linkedin: "https://www.linkedin.com/",
-    initials: "KJ",
-    tone: "from-blush to-peach",
+    photo: kathrinaPhoto.url,
   },
   {
     name: "Gayathri Sekar",
-    role: "Co-Founder & CTO/CPO",
+    role: "Co-Founder & CTO",
     bio: "MBA in International Management, Hochschule Pforzheim (Class of 2027). 10+ years of experience in software engineering and product development. Leads AI strategy, technology, and product innovation.",
     linkedin: "https://www.linkedin.com/",
-    initials: "GS",
-    tone: "from-lavender to-lumi",
+    photo: gayathriPhoto.url,
   },
 ];
 
@@ -245,11 +245,14 @@ function Founders() {
             className="rounded-3xl border border-border/70 bg-card p-8 soft-shadow"
           >
             <div className="flex items-center gap-5">
-              <div
-                className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${f.tone} font-display text-xl font-semibold text-foreground`}
-              >
-                {f.initials}
-              </div>
+              <img
+                src={f.photo}
+                alt={`Portrait of ${f.name}`}
+                width={128}
+                height={128}
+                loading="lazy"
+                className="h-16 w-16 shrink-0 rounded-2xl object-cover soft-shadow"
+              />
               <div>
                 <h3 className="font-display text-xl font-semibold text-foreground">
                   {f.name}
