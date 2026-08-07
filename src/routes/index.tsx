@@ -3,7 +3,7 @@ import { Linkedin } from "lucide-react";
 import heroLumi from "@/assets/hero-lumi.png";
 import kathrinaPhoto from "@/assets/kathrina.jpeg.asset.json";
 import gayathriPhoto from "@/assets/gayathri.jpeg.asset.json";
-import foundersTogether from "@/assets/founders-together.jpeg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
