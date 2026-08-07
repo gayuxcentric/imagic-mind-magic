@@ -228,7 +228,7 @@ const founders = [
   {
     name: "Gayathri Sekar",
     role: "Co-Founder & CTO",
-    bio: "MBA in International Management, Hochschule Pforzheim (Class of 2027). 10+ years of experience in software engineering and product development. Leads AI strategy, technology, and product innovation.",
+    bio: "MBA in International Management. 10+ years of experience in software engineering and product development. Leads AI strategy, technology, and product innovation.",
     linkedin: "https://www.linkedin.com/in/gayathri-sekar-18858924/",
     photo: gayathriPhoto.url,
   },
