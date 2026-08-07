@@ -247,7 +247,8 @@ function Storytelling() {
           </p>
           <p>
             We believe AI should encourage imagination, build confidence and
-            help children learn through play—not replace their creativity.
+            help children learn through play, rather than replace their
+            creativity.
           </p>
         </div>
         <a
