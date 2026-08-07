@@ -34,6 +34,7 @@ function Index() {
       <Hero />
       <HowItWorks />
       <WhyTrust />
+      <Storytelling />
       <Founders />
       <Waitlist />
       <Footer />
