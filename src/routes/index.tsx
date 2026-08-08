@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Linkedin } from "lucide-react";
 import { Hero } from "@/components/Hero";
+import { GameJourney } from "@/components/GameJourney";
 import kathrinaPhoto from "@/assets/kathrina.jpeg.asset.json";
 import gayathriPhoto from "@/assets/gayathri.jpeg.asset.json";
 
@@ -33,7 +34,7 @@ function Index() {
     <div className="min-h-screen bg-background font-sans text-foreground antialiased">
       <Nav />
       <Hero />
-      <HowItWorks />
+      <GameJourney />
       <WhyTrust />
       <Storytelling />
       <Founders />
@@ -78,44 +79,6 @@ function Nav() {
 }
 
 
-const steps = [
-  { emoji: "💡", title: "Imagine", desc: "Share your idea." },
-  { emoji: "🤖", title: "Create", desc: "AI brings it to life." },
-  { emoji: "🎨", title: "Play", desc: "Explore and customize." },
-  { emoji: "🌱", title: "Grow", desc: "Build creativity and confidence." },
-];
-
-function HowItWorks() {
-  return (
-    <section id="how" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-      <SectionHeading
-        eyebrow="How it works"
-        title="Magic in four simple steps"
-      />
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {steps.map((s, i) => (
-          <div
-            key={s.title}
-            className="rounded-3xl border border-border/70 bg-card p-7 soft-shadow transition-transform hover:-translate-y-1"
-          >
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/30 text-3xl">
-              {s.emoji}
-            </div>
-            <div className="mt-5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              0{i + 1}
-            </div>
-            <h3 className="mt-1 font-display text-xl font-semibold text-foreground">
-              {s.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {s.desc}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 const trusts = [
   {
