@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Linkedin } from "lucide-react";
 import { Hero } from "@/components/Hero";
+import { GameJourney } from "@/components/GameJourney";
 import kathrinaPhoto from "@/assets/kathrina.jpeg.asset.json";
 import gayathriPhoto from "@/assets/gayathri.jpeg.asset.json";
 
@@ -33,7 +34,7 @@ function Index() {
     <div className="min-h-screen bg-background font-sans text-foreground antialiased">
       <Nav />
       <Hero />
-      <HowItWorks />
+      <GameJourney />
       <WhyTrust />
       <Storytelling />
       <Founders />
