@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "ImagicMind — Where Young Minds Imagine Without Limits" },
+      { name: "description", content: "ImagicMind is a safe AI-powered creative companion where children aged 5–12 imagine, create, and learn through magical experiences." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "ImagicMind — Where Young Minds Imagine Without Limits" },
+      { property: "og:description", content: "ImagicMind is a safe AI-powered creative companion where children aged 5–12 imagine, create, and learn through magical experiences." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "ImagicMind — Where Young Minds Imagine Without Limits" },
+      { name: "twitter:description", content: "ImagicMind is a safe AI-powered creative companion where children aged 5–12 imagine, create, and learn through magical experiences." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/af835219d391ac7258c770d203d922a0/id-preview-196174b6--41f70d87-b42a-431d-9982-b17855d0507a.lovable.app-1786095965241.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/af835219d391ac7258c770d203d922a0/id-preview-196174b6--41f70d87-b42a-431d-9982-b17855d0507a.lovable.app-1786095965241.png" },
     ],
     links: [
       {

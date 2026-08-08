@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "A safe AI-powered creative companion where children imagine, create, and learn through magical experiences.",
+          "ImagicMind is a safe AI-powered creative companion where children aged 5–12 imagine, create, and learn through magical experiences.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
