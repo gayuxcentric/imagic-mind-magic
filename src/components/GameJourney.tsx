@@ -190,7 +190,7 @@ export function GameJourney() {
                   animate={{ scale: [1, 1.06, 1], opacity: [0.85, 1, 0.85] }}
                   transition={{ duration: 2.4, repeat: Infinity }}
                 >
-                  Updating ✨
+                  <span className="inline-flex items-center gap-1"><Sparkles size={11} /> Updating</span>
                 </motion.span>
               </div>
 
