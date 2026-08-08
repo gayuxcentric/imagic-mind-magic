@@ -3,7 +3,7 @@ import { Palette, Shirt, Sparkles, Scissors, Mic } from "lucide-react";
 import girl from "@/assets/lumi-girl.png";
 
 const bubbles = [
-  { text: "Give her pink star hair ✨", pos: "left-0 top-6", delay: 0.5 },
+  { text: "Give her pink star hair ✨", pos: "left-0 top-20", delay: 0.5 },
   { text: "Make her dress blue 💙", pos: "right-0 top-40", delay: 0.9 },
   { text: "Add fairy wings 🪽", pos: "left-2 bottom-24", delay: 1.3 },
 ];
