@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Linkedin } from "lucide-react";
-import heroLumi from "@/assets/hero-lumi.png";
+import { Hero } from "@/components/Hero";
 import kathrinaPhoto from "@/assets/kathrina.jpeg.asset.json";
 import gayathriPhoto from "@/assets/gayathri.jpeg.asset.json";
+
 
 
 export const Route = createFileRoute("/")({
@@ -76,66 +77,6 @@ function Nav() {
   );
 }
 
-function Hero() {
-  return (
-    <section id="top" className="relative overflow-hidden">
-      {/* soft pastel ambient blobs */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full bg-blush/50 blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-0 top-40 h-96 w-96 rounded-full bg-lavender/40 blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-peach/40 blur-3xl"
-      />
-
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-        <div className="text-center md:text-left">
-          <span className="inline-flex items-center rounded-full bg-secondary/60 px-4 py-1.5 text-xs font-medium text-secondary-foreground">
-            ✨ For curious minds aged 5–12
-          </span>
-          <h1 className="mt-6 font-display text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Where Young Minds Imagine Without Limits
-          </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:mx-0">
-            ImagicMind is a safe AI-powered creative companion where children
-            imagine, create, and learn through magical experiences.
-          </p>
-          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row md:justify-start">
-            <a
-              href="#waitlist"
-              className="w-full rounded-full bg-primary px-7 py-3.5 text-center text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02] sm:w-auto"
-            >
-              Start Creating
-            </a>
-            <a
-              href="#waitlist"
-              className="w-full rounded-full border border-border bg-card px-7 py-3.5 text-center text-sm font-semibold text-foreground transition-colors hover:bg-accent/40 sm:w-auto"
-            >
-              Join Waitlist
-            </a>
-          </div>
-        </div>
-
-        <div className="relative">
-          <div className="relative mx-auto max-w-md rounded-[2.5rem] bg-gradient-to-br from-cream via-card to-lavender/30 p-4 soft-shadow-lg md:max-w-lg">
-            <img
-              src={heroLumi}
-              alt="A child imagining alongside Lumi, the friendly AI companion"
-              width={1024}
-              height={1024}
-              className="h-auto w-full rounded-[2rem]"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 const steps = [
   { emoji: "💡", title: "Imagine", desc: "Share your idea." },
